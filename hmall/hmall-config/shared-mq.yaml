@@ -1,0 +1,7 @@
+spring:
+  rabbitmq:
+    host: ${hm.mq.host:192.168.150.101} # 主机名
+    port: ${hm.mq.port:5672} # 端口
+    virtual-host: ${hm.mq.vhost:/hmall} # 虚拟主机
+    username: ${hm.mq.un:hmall} # 用户名
+    password: ${hm.mq.pw:123} # 密码

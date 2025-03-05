@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: user-service # 微服务名称
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: xxx.xxx.xxx.xx:8848
+      config:
+        namespace: a46a5e38-11d6-4d8c-9091-f779ad580533
+        file-extension: yaml
+        shared-configs:
+          - data-id: shared-jdbc.yaml
+          - data-id: shared-log.yaml
+          - data-id: shared-swagger.yaml
+          - data-id: shared-seata.yaml
+      discovery:
+        namespace: a46a5e38-11d6-4d8c-9091-f779ad580533

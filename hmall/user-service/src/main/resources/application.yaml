@@ -1,0 +1,16 @@
+server:
+  port: 8084
+feign:
+  okhttp:
+    enabled: true
+hm:
+  db:
+    database: hm-user
+  swagger:
+    title: "黑马商城用户服务接口文档"
+    package: com.hmall.user.controller
+  jwt:
+    location: classpath:hmall.jks
+    alias: hmall
+    password: hmall123
+    tokenTTL: 30m

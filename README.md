@@ -2,11 +2,7 @@
 
 ## 项目模块
 
-
-
-
-
-
+todo
 
 
 
@@ -82,49 +78,10 @@ nacos/nacos-server:v2.1.0-slim
 
 后台地址：http://192.168.137.128:8090/
 
-原Windows指令
+部署指令
 
 ```bash
 java -Dserver.port=8090 -Dcsp.sentinel.dashboard.server=localhost:8090 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard.jar
-```
-
-Docker 部署
-
-1. 编写 Dockerfile
-
-```yaml
-# 使用官方的 OpenJDK 作为基础镜像
-FROM openjdk:8-jre-alpine
-
-# 设置工作目录
-WORKDIR /app
-
-# 将本地的 jar 包复制到镜像中
-COPY sentinel-dashboard.jar /app/sentinel-dashboard.jar
-
-# 暴露 Sentinel Dashboard 服务的端口
-EXPOSE 8090
-
-# 启动 Sentinel Dashboard 服务
-ENTRYPOINT ["java", "-Dserver.port=8090", "-Dcsp.sentinel.dashboard.server=localhost:8090", "-Dproject.name=sentinel-dashboard", "-jar", "/app/sentinel-dashboard.jar"]
-```
-
-2. 构建 Docker 镜像
-
-```bash
-docker build -t sentinel-dashboard .
-```
-
-3. 运行 Docker 容器
-
-```bash
-docker run -d -p 8090:8090 --name sentinel-dashboard sentinel-dashboard
-```
-
-4. 验证部署
-
-```bash
-http://192.168.137.128:8090
 ```
 
 
